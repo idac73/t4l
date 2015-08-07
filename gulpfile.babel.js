@@ -8,6 +8,17 @@ import {stream as wiredep} from 'wiredep';
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
+gulp.task('favicons', () => {
+    return gulp.src('app/index.html')
+        .pipe($.favicons({
+            files: {
+              dest: 'images/favicon',
+              src: 'app/images/stickfist.png'},
+            settings: { background: '#ffffff' }
+        }))
+        .pipe(gulp.dest('./'));
+});
+
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
     .pipe($.plumber())
@@ -89,7 +100,7 @@ gulp.task('extras', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['styles', 'fonts'], () => {
+gulp.task('serve', ['favicons', 'styles', 'fonts'], () => {
   browserSync({
     notify: false,
     port: process.env.PORT,

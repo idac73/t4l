@@ -1,3 +1,5 @@
+@import 'images';
+
 $icon-font-path: '../fonts/';
 
 @mixin border-radius($radius) {
@@ -77,6 +79,10 @@ a:hover, a:focus {
   color: #b39300;
 }
 
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color:transparent;
+}
+
 .light {
   font-weight: 400;
 }
@@ -111,14 +117,14 @@ a:hover, a:focus {
   background-color: rgba(26, 26, 26, 0.3);
   @include border-radius(10px 10px 0 0); 
 } */
-.navbar-custom .nav li a {
+.navbar-custom .nav li {
   border:1px solid transparent;
   @include border-radius(8px);
  -webkit-transition: background .3s ease-in-out, border .3s ease-in-out, padding .3s ease-in-out;
   -moz-transition: background .3s ease-in-out, border .3s ease-in-out, padding .3s ease-in-out;
   transition: background .3s ease-in-out, border .3s ease-in-out, padding .3s ease-in-out;
 }
-.navbar-custom .nav li a:hover, .navbar-custom .nav li a:focus, .navbar-custom .nav li a.active {
+.navbar-custom .nav li:hover, .navbar-custom .nav li:focus, .navbar-custom .nav li.active {
   background-color: transparent;
   border: 1px solid #F1F1F1;
   @include border-radius(8px);
@@ -126,12 +132,10 @@ a:hover, a:focus {
   -moz-transition: background .3s ease-in-out, border .3s ease-in-out, padding .3s ease-in-out;
   transition: background .3s ease-in-out, border .3s ease-in-out, padding .3s ease-in-out;
 }
-
 .navbar-brand.page-scroll > i.fa-headphones {
   margin-right:2.5px;
 }
-
-.top-nav-collapse .nav li a:hover, .top-nav-collapse .nav li a:focus, .top-nav-collapse .nav li a.active {
+.top-nav-collapse .nav li:hover, .top-nav-collapse .nav li:focus, .top-nav-collapse .nav li.active {
   outline: none;
   border:none;
   background-color: rgba(26, 26, 26, 0.3);
@@ -140,9 +144,7 @@ a:hover, a:focus {
   -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
   transition: background .5s ease-in-out,padding .5s ease-in-out;
 }
-
-
-.top-nav-collapse .nav li a {
+.top-nav-collapse .nav li {
   outline: none;
   border:none;
   @include border-radius(10px 10px 0 0);
@@ -150,7 +152,6 @@ a:hover, a:focus {
     -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
     transition: background .5s ease-in-out,padding .5s ease-in-out;
 }
-
 @media (min-width: 767px) {
   .navbar {
     padding: 20px 0;
@@ -161,25 +162,20 @@ a:hover, a:focus {
     -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
     transition: background .5s ease-in-out,padding .5s ease-in-out;
   }
-
   .navbar-custom a, .navbar-custom i {
     color: #f1f1f1;
     -webkit-transition: color .7s ease-in-out;
     -moz-transition: color .7s ease-in-out;
     transition: color .7s ease-in-out;    
   }
-  
 }
-
 @media (max-width: 767px) {
-
 .navbar-custom {
   background-color: #F1F1F1;
   -webkit-transition: background-color .7s ease-in-out;
   -moz-transition: background-color .7s ease-in-out;
   transition: background-color .7s ease-in-out; 
 }
-
   .navbar-custom a, .navbar-custom i {
     color: #1a1a1a;
     -webkit-transition: color .7s ease-in-out;
@@ -187,11 +183,10 @@ a:hover, a:focus {
     transition: color .7s ease-in-out;    
   }
   
-  .navbar-custom .nav li a:hover, .navbar-custom .nav li.active {
+  .navbar-custom .nav li:hover, .navbar-custom .nav li.active {
     border-radius: 0px;
   }
 }
-
   .top-nav-collapse {
     padding: 0;
     background-color: #F1F1F1;
@@ -199,11 +194,9 @@ a:hover, a:focus {
         color: #1a1a1a;
       }
   }
-
   .navbar-custom.top-nav-collapse {
     border-bottom: 1px solid rgba(26, 26, 26, 0.3);
   }
-
 .intro {
   display: table;
   width: 100%;
@@ -212,7 +205,6 @@ a:hover, a:focus {
   text-align: center;
   color: #f1f1f1;
 }
-
 /* Thank you, Sotch.io
   http://codepen.io/ncerminara/pen/eFzJI
 */
@@ -235,7 +227,6 @@ a:hover, a:focus {
     -webkit-background-size: cover;
     background-size: cover;
 }
-
 .intro .intro-body {
   display: table-cell;
   vertical-align: middle;
@@ -268,13 +259,11 @@ a:hover, a:focus {
     font-size: 25px;
   }
 }
-
 @media (min-width: 992px) {
   .intro {
     margin-top:0px;
   }
 }
-
 .btn-circle {
   width: 70px;
   height: 70px;
@@ -294,8 +283,6 @@ a:hover, a:focus {
   color: #f1f1f1;
   background: rgba(241, 241, 241, 0.1);
 }
-
-
 .download-section {
   width: 100%;
   padding: 50px 0;
@@ -306,12 +293,10 @@ a:hover, a:focus {
   background-size: cover;
   -o-background-size: cover;
 }
-
 #map {
   width: 100%;
   height: 200px;
 }
-
 @media (min-width: 767px) {
   #portfolio, #contact, .download-section {
     padding: 100px 0;
@@ -328,7 +313,6 @@ a:hover, a:focus {
   -moz-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
-
 .btn-default {
   color: #ffd200;
   background-color: rgba(241, 241, 241, 0);
@@ -385,20 +369,17 @@ footer {
 footer p {
   margin: 0;
 }
-
 ::-moz-selection, ::selection {
   text-shadow: none;
   background: #fcfcfc;
   background: rgba(241, 241, 241, 0.2);
 }
-
 img::selection {
   background: transparent;
 }
 img::-moz-selection {
   background: transparent;
 }
-
 .portfolio-item h3 {
     margin-top: 30px;
 }
