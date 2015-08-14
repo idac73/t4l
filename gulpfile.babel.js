@@ -16,10 +16,10 @@ gulp.task('favicons', () => {
     .pipe($.favicons({
       files: {
         dest: 'images/favicon',
-        src: 'app/images/stickfist.png'
+        src: 'app/images/t4l-icon.svg'
       },
       settings: {
-        background: '#ffffff'
+        background: '#ffd200'
       }
     }))
     .pipe(gulp.dest('./'));

@@ -9,9 +9,9 @@
     <title>Joshua Sherer - FullStack JavaScript Web Developer and ThrashPunk Drummer at Your Service</title>
     <meta name="description" content="Joshua Sherer - FullStack JavaScript Web Developer and ThrashPunk Drummer at Your Service">
     <meta name="keywords" content="Joshua, Sherer, Josh, Joshua Sherer, Josh Sherer, fullstack, javascript, html5, css3, mongodb, expressjs, angularjs, nodejs, meteorjs, ionic, drum, drummer, thrash, punk, metal, rock">
-    <meta name="apple-mobile-web-app-title" content="Joshua Sherer - Web Dev n' Drumming">    
-    
-    <link rel="canonical" href="...">
+    <meta name="apple-mobile-web-app-title" content="Joshua Sherer">
+
+    <link rel="canonical" href="">
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
@@ -29,7 +29,7 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
-    
+
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
@@ -60,10 +60,12 @@
     <link rel="yandex-tableau-widget" href="images/favicon/yandex-browser-manifest.json">
     <meta property="og:image" content="images/favicon/open-graph.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#FFD200">
     <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
     <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#FFD200">
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
@@ -71,7 +73,7 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <body data-spy="scroll" data-target=".navbar-fixed-top">
 
         <!-- Navigation -->
         <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -80,7 +82,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand page-scroll" href="#page-top">
+                    <a class="navbar-brand page-scroll" href="#home">
                         <i class="fa fa-headphones"></i> Joshua Sherer
                     </a>
                 </div>
@@ -90,9 +92,9 @@
                     <ul class="nav navbar-nav">
                         <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                         <li class="hidden">
-                            <a href="#page-top"></a>
+                            <a href="#home"></a>
                         </li>
-                        <li>
+                        <li class="light-tab">
                             <a class="page-scroll" href="#portfolio"><i class="fa fa-code"></i>  Portfolio</a>
                         </li>
                         <li>
@@ -106,21 +108,20 @@
         </nav>
 
         <!-- Intro Header -->
-        <header class="intro">
-            <div class="intro-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h1 class="brand-heading">
-                            <span class="light">The droid you're looking for<br></span>
-                            Joshua Sherer</h1>
-                            <p class="intro-text">FullStack JavaScript Web Development
-                                <br>ThrashPunk Drumming
-                                <br>at your service.</p>
-                            <a href="#portfolio" class="btn btn-circle page-scroll pulse">
-                                <i class="fa fa-angle-double-down"></i>
-                            </a>
-                        </div>
+        <header id="home" class="text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="banner-heading">
+                        <span class="light">The droid you're looking for<br></span>
+                        Joshua Sherer</h1>
+                        <p class="banner-text">FullStack JavaScript Web Development
+                            <br>ThrashPunk Drumming
+                            <br>at your service.
+                        </p>
+                        <a href="#portfolio" class="btn btn-circle page-scroll pulse">
+                            <i class="fa fa-angle-double-down"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -190,61 +191,46 @@
         <!-- Contact Section -->
         <section id="contact" class="text-center">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 col-lg-offset-1">
-                        <h2><i class="fa fa-envelope"></i>  Contact</h2>
-                        <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                        <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
-                        </p>
-                        <ul class="list-inline banner-social-buttons">
-                            <li>
-                                <a href="https://www.linkedin.com/in/jsherer" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">LinkedIn</span></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/thrash4life" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/thrash4life" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                            </li>
-                        </ul>
-                        <ul class="list-inline banner-social-buttons">
-                            <li>
-                                <a href="https://goo.gl/ZfioeF" class="btn btn-default btn-lg"><i class="fa fa-youtube-play fa-fw"></i> <span class="network-name">YouTube</span></a>
-                            </li>
-                            <li>
-                                <a href="https://soundcloud.com/thrash4life/sets" class="btn btn-default btn-lg"><i class="fa fa-soundcloud fa-fw"></i> <span class="network-name">Soundcloud</span></a>
-                            </li>
-                            <li>
-                                <a href="http://imdb.com/name/nm3235781" class="btn btn-default btn-lg"><i class="fa fa-film fa-fw"></i> <span class="network-name">IMDB</span></a>
-                            </li>
-                        </ul>
+                <div id="contact_form" class="row">
+                    <div class="col-md-12">
+                        <h2>Get In Touch <i class="fa fa-smile-o"></i></h2>
+                        <form role="form" id="contactForm">
+                            <div class="form-group">
+                                <label class="control-label" for="name">Name *</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" />
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-unchecked form-control-feedback"></i></span>
+                                </div>
+                                <span class="help-block" style="display: none;">Please enter your name.</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="email">Email Address *</label>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" />
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-unchecked form-control-feedback"></i></span>
+                                </div>
+                                <span class="help-block" style="display: none;">Please enter a valid e-mail address.</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="message">Message *</label>
+                                <div class="input-group">
+                                    <textarea rows="5" cols="30" class="form-control" id="message" name="message" placeholder="Enter your message"></textarea>
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-unchecked form-control-feedback"></i></span>
+                                </div>
+                                <span class="help-block" style="display: none;">Please enter a message.</span>
+                            </div>
+                            <div class="form-group">
+                                <div class="g-recaptcha" data-sitekey="6LdFNAsTAAAAALvwBmG-QrKaI6UDgJwQzjkbZfZE"></div>
+                                <span class="help-block" style="display: none;">Please check that you are not a robot.</span>
+                            </div>
+                            <span class="help-block" style="display: none;">Please enter a the security code.</span>
+                            <button type="submit" id="msgSendBtn" class="btn btn-primary btn-lg" data-loading-text="Sending..."><i class="fa fa-envelope-o"></i>  Send</button>
+                        </form>
                     </div>
                 </div>
+                <!--/row-->
             </div>
-        </section>
-
-        <!-- Download SASS Section -->
-        <section id="download2" class="text-center">
-            <div class="download-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h2>Download Grayscale</h2>
-                            <p>You can download the SASS version of Grayscale for free on the GITHUB page.</p>
-                            <a href="https://github.com/blackfyre/grayscale-sass/" class="btn btn-default btn-lg">Visit the Download Page</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Map Section -->
-        <section id="map-section" class="text-center">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div id="map"></div>
-                </div>
-            </div>
+            <!--/.container-->
         </section>
 
         <!-- Footer -->
@@ -287,9 +273,6 @@
         <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
         <!-- <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script> -->
         <!-- endbuild -->
-
-        <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbnrBr4VeqTomePMKV-rF0GS3oJL0kAHM&sensor=false"></script>
 
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
