@@ -17,12 +17,19 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 if(!(isMobile)) {
   window.onresize = function(event) {
     $('#home').animate({height:$(window).height()}, 500);
+    $('#contact').css('padding-bottom',''+Math.round($(window).height() * .2)+'px');
   };
   
   window.onload = function(event) {
     $('#home').animate({height:$(window).height()}, 500);
+    $('#contact').css('padding-bottom',''+Math.round($(window).height() * .2)+'px');    
   };
+  /* $('.navbar-nav li:nth-child(3)').removeClass('light-tab'); */
 }
+
+/* if(isMobile) {
+  $('.navbar-nav li:nth-child(3)').addClass('light-tab');
+} */
 
 // jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
@@ -63,9 +70,9 @@ $('.navbar-brand.page-scroll').click(function() {
 // animate logo by navbar site name
 (function nameLogoFade() {
     $('.navbar-brand.page-scroll > i').delay(4000).fadeOut(1000, function() {
-        $(this).removeClass('fa-headphones').addClass('fa-laptop').fadeIn(1000, function() {
+        $(this).removeClass('fa-headphones').addClass('fa-code').fadeIn(1000, function() {
             $(this).delay(4000).fadeOut(1000, function() {
-                $(this).removeClass('fa-laptop').addClass('fa-headphones').fadeIn(1000, function() {
+                $(this).removeClass('fa-code').addClass('fa-headphones').fadeIn(1000, function() {
                     nameLogoFade();
                 });
             });
@@ -125,6 +132,8 @@ $('.navbar-brand.page-scroll').click(function() {
   };
 
   $(document).ready(function() {
+    Pace.on("start", function() { $('#curtain').fadeIn(500); });
+    Pace.on("done", function() { $('#curtain').fadeOut(1000); });
 
     $("#msgSendBtn").click(function(e) {
       e.preventDefault();
