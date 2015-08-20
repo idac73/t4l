@@ -24,9 +24,7 @@ body {
     height: 100%;
     font-family: 'Raleway', sans-serif;
     color: #f1f1f1;
-    background-color: #3A3736;
-    /* or #3A3736 */
-    
+    background-color: #3a3736;
     -webkit-tap-highlight-color: rgba(241, 241, 241, 0.2);
 }
 h1,
@@ -52,12 +50,32 @@ p {
     font-size: 18px;
     line-height: 1.5;
 }
+q, #testimonials span {
+    margin: 0 0 30px;
+    font-size: 20px;
+    line-height: 1.5;
+}
+q {
+  quotes: "“" "”" "‘" "’";
+}
+q:before {
+    content: open-quote;
+}
+q:after {
+    content: close-quote;
+}
+#testimonials span {
+    display: block;
+    margin-top:10px;
+}
 header,
 section {
     padding: 100px 0;
 }
 hr {
     border-top: 1px solid rgba(243,109,65,.9);
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 a {
     color: #F36D41;
@@ -82,7 +100,7 @@ a:focus {
     border-bottom: 1px solid rgba(243,109,65,.9);
     text-transform: uppercase;
     font-family: 'Raleway', serif;
-    background-color: #3A3736;
+    background-color: #3a3736;
 }
 .navbar-custom .navbar-brand {
     font-weight: 700;
@@ -127,7 +145,7 @@ a:focus {
 .top-nav-collapse .nav li.active {
     outline: none;
     border: 1px solid transparent;
-    background-color: #3A3736;
+    background-color: #3a3736;
     @include border-radius(10px 10px 0 0);
     -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
     -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
@@ -152,7 +170,7 @@ a:focus {
     -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
     transition: background .5s ease-in-out, padding .5s ease-in-out;
     a,i {
-        color: #3A3736;
+        color: #3a3736;
         -webkit-transition: color .7s ease-in-out;
         -moz-transition: color .7s ease-in-out;
         transition: color .7s ease-in-out;
@@ -189,7 +207,7 @@ a:focus {
     height: 100%;
     z-index: 0;
     opacity: 0.4;
-    background: #3A3736 url(../images/home-bg.jpg) no-repeat scroll bottom center;
+    background: #3a3736 url(../images/home-bg.jpg) no-repeat scroll bottom center;
     background-repeat: no-repeat;
     background-position: 50% 0;
     -ms-background-size: cover;
@@ -220,6 +238,8 @@ a:focus {
     -webkit-transition: background .5s ease-in-out;
     -moz-transition: background .5s ease-in-out;
     transition: background .5s ease-in-out;
+    text-shadow: 0px 1px 0px #999, 0px 2px 0px #777, 0px 3px 0px #555, 0px 4px 0px #333, 0px 5px 4px #001135;
+    box-shadow: 0px 1px 0px #999, 0px 2px 0px #777, 0px 3px 0px #555, 0px 4px 0px #333, 0px 5px 4px #001135; 
 }
 .btn-circle:hover {
     background: rgba(243,109,65,.6);
@@ -238,9 +258,9 @@ a:focus {
     transition: all .3s ease-in-out;
 }
 .btn-default {
-    border: 1px solid #3A3736;
-    color: #3A3736;
-    background-color: #f1f1f1;    
+    border: 1px solid #f1f1f1;
+    color: #f1f1f1;
+    background-color: #3a3736;    
 }
 .btn-primary {
     color: #f1f1f1;
@@ -266,7 +286,7 @@ a:focus {
 .open > .btn-default.dropdown-toggle:hover {
     color: #f1f1f1;
     background-color: rgba(230, 230, 230, 0);
-    border-color: #3A3736;
+    border-color: #3a3736;
 }
 .btn-default:active,
 .btn-default.active,
@@ -310,12 +330,12 @@ ul.banner-social-buttons {
     margin-bottom:40px;
 }
 footer {
-    background-color: #f1f1f1;
-    color: #3A3736;
+    color: #f1f1f1;
+    background-color: #3a3736;
     padding: 50px 0;
 }
 footer p {
-    margin: 0;
+    margin: 0 0 40px 0;
 }
 ::-moz-selection,
 ::selection {
@@ -329,9 +349,13 @@ img::selection {
 img::-moz-selection {
     background: transparent;
 }
-#portfolio {
+#testimonials, #contact {
+    color: #3a3736;
     background-color: #f1f1f1;
-    color: #3A3736;
+}
+#portfolio {
+    background-color: #3a3736;
+    color: #f1f1f1;
 }
 .portfolio-item h3 {
     margin-top: 30px;
@@ -345,7 +369,9 @@ img::-moz-selection {
     display: block;
     position: relative;
     max-width: 400px;
-    margin: 0 auto
+    margin: 0 auto;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;    
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
@@ -371,7 +397,7 @@ img::-moz-selection {
     text-align: center;
     top: 50%;
     margin-top: -12px;
-    color: #fff
+    color: #f1f1f1
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
@@ -385,10 +411,11 @@ img::-moz-selection {
 #portfolio .portfolio-item .portfolio-caption {
     max-width: 400px;
     margin: 0 auto;
-    background-color: #3A3736;
-    color: #f1f1f1;
+    background-color: #f1f1f1;
+    color: #3a3736;
     text-align: center;
-    padding: 25px
+    padding: 25px;
+    border-radius: 0px 0px 10px 10px;    
 }
 
 #portfolio .portfolio-item .portfolio-caption h4 {
@@ -483,7 +510,6 @@ img::-moz-selection {
 }
 
 #contact {
-    background-color: #3A3736;
     .form-group {
         text-align:left;
         margin-bottom: 25px;
@@ -532,7 +558,7 @@ img::-moz-selection {
     }
     .top-nav-collapse {
         padding: 0;
-        background-color: #3A3736;
+        background-color: #3a3736;
         a, i {
             color: #f1f1f1;
         }
@@ -542,12 +568,15 @@ img::-moz-selection {
     }
     #home .banner-heading {
         font-size: 100px;
+        text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;        
         .light {
             font-size: 30px;
+            text-shadow: 0px 1px 0px #999, 0px 2px 0px #777, 0px 3px 0px #555, 0px 4px 0px #333, 0px 5px 4px #001135; 
         }
     }
     #home .banner-text {
         font-size: 25px;
+        text-shadow: 0px 1px 0px #999, 0px 2px 0px #777, 0px 3px 0px #555, 0px 4px 0px #333, 0px 5px 4px #001135; 
     }
     #home:before {
         background-position: 68% 0;
@@ -563,7 +592,7 @@ img::-moz-selection {
     .navbar-custom {
         padding: 0;
         border-bottom: 1px solid rgba(243,109,65,.9);
-        background-color: #3A3736;
+        background-color: #3a3736;
         a, i {
             color: #f1f1f1;
         }
@@ -593,7 +622,7 @@ img::-moz-selection {
     .navbar-custom .nav li.light-tab.active {
         background-color: #f1f1f1;
         a,i {
-            color: #3A3736;
+            color: #3a3736;
         }
         border: 1px solid transparent;
     }    

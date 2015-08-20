@@ -19,7 +19,7 @@ gulp.task('favicons', () => {
         src: 'app/images/js-logo.svg'
       },
       settings: {
-        background: '#3A3736'
+        background: '#3a3736'
       }
     }))
     .pipe(gulp.dest('./'));

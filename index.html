@@ -38,7 +38,7 @@
             bottom: 0;
             height: 10px;
             width: 45%;
-            background: #494540;
+            background: #3A3736;
             border: 1px solid #f1f1f1;
             overflow: hidden;
         }
@@ -72,10 +72,16 @@
             left: 0;
             height: 100%;
             width: 100%;
-            background-color: #494540;
+            background-color: #3A3736;
             z-index: 999998;
         }
     </style>
+    <script>
+        /* http://james.padolsey.com/snippets/get-document-height-cross-browser/ */
+        var D = document;
+        var curtain = D.getElementById('curtain');
+        curtain.height = Math.max(D.body.scrollHeight, D.documentElement.scrollHeight, D.body.offsetHeight, D.documentElement.offsetHeight, D.body.clientHeight, D.documentElement.clientHeight);
+    </script>
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
@@ -110,10 +116,10 @@
 <link rel="yandex-tableau-widget" href="images/favicon/yandex-browser-manifest.json">
 <meta property="og:image" content="images/favicon/open-graph.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="msapplication-TileColor" content="#f1f1f1">
+<meta name="msapplication-TileColor" content="#3A3736">
 <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
 <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
-<meta name="theme-color" content="#f1f1f1"></head>
+<meta name="theme-color" content="#3A3736"></head>
 <body data-spy="scroll" data-target=".navbar-fixed-top">
     <div id="curtain"></div>
     <!--[if lt IE 10]>
@@ -138,6 +144,9 @@
                         <a href="#home"></a>
                     </li>
                     <li class="light-tab">
+                        <a class="page-scroll" href="#testimonials"><i class="fa fa-comments"></i>  Testimonials</a>
+                    </li> 
+                    <li class="light-tab">
                         <a class="page-scroll" href="#portfolio"><i class="fa fa-code"></i>  Portfolio</a>
                     </li>
                     <li class="light-tab">
@@ -149,7 +158,7 @@
         </div>
         <!-- /.container -->
     </nav>
-    <!-- Intro Header -->
+    <!-- Header -->
     <header id="home" class="text-center">
         <div class="container">
             <div class="row">
@@ -157,24 +166,71 @@
                     <h1 class="banner-heading">
                         <span class="light">The droid you're looking for<br></span>
                         Joshua Sherer</h1>
-                    <p class="banner-text">FullStack JavaScript Web Development
+                    <p class="banner-text">Full Stack JavaScript Web Development
                         <br>ThrashPunk Drumming
                         <br>at your service.
                     </p>
-                    <a href="#portfolio" class="btn btn-circle page-scroll pulse">
+                    <a href="#testimonials" class="btn btn-circle page-scroll pulse">
                         <i class="fa fa-angle-double-down"></i>
                     </a>
                 </div>
             </div>
         </div>
     </header>
-    <!-- Portfolio Grid Section -->
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="text-center">
+        <div class="container">
+            <div id="contact_form" class="row">
+                <div class="col-md-12">
+                    <h2><i class="fa fa-comments"></i> Testimonials</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <q>In Josh's world, change is an everyday occurenece - things come out of left field without warning. He always handles change gracefully and effectively. His lively mind enables him to keep on his toes and roll with the punches. As a natural teacher, he also helps others to embrace change.</q>
+                        <br><span> - Project Manager</span>
+                        <hr>
+                </div>
+                <div class="col-lg-12">
+                    <q>He always suggested optimum ideas to implement the requirements, discussed those clearly with other team members, was open to take up any good ideas suggested by other team members, and most importantly, excellent in summarizing them regularly and sending them through mails to keep everybody on the same page.</q>
+                        <br><span> - Cross-Functional Peer</span>
+                        <hr>
+                </div>
+                <div class="col-lg-12">
+                    <q>I formally recognized Josh for a specific activity… to troubleshoot critical production bugs. He not only helped out solutions with the business, he took the opportunity to repair issues that fell outside the defined scope of his responsbilities.</q>
+                        <br><span> - Business Manager</span>                    
+                </div>
+            </div>
+    </div></section>
+    <!-- Portfolio Section -->
     <section id="portfolio" class="text-center">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading"><i class="fa fa-code"></i> Portfolio</h2>
                 </div>
+            </div>
+            <div class="row">
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a title="LinkedIn" href="https://www.linkedin.com/in/jsherer" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i></a>
+                    </li>
+                    <li>
+                        <a title="GitHub" href="https://github.com/thrash4life" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i></a>
+                    </li>
+                    <li>
+                        <a title="Twitter" href="https://twitter.com/thrash4life" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i></a>
+                    </li>
+                    <li>
+                        <a title="YouTube" href="https://goo.gl/ZfioeF" class="btn btn-default btn-lg"><i class="fa fa-youtube-play fa-fw"></i></a>
+                    </li>
+                    <li>
+                        <a title="SoundCloud" href="https://soundcloud.com/thrash4life/sets" class="btn btn-default btn-lg"><i class="fa fa-soundcloud fa-fw"></i></a>
+                    </li>
+                    <li>
+                        <a title="IMDB" href="http://imdb.com/name/nm3235781" class="btn btn-default btn-lg"><i class="fa fa-film fa-fw"></i></a>
+                    </li>
+                </ul>
             </div>
             <div class="row">
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -187,8 +243,8 @@
                         <img src="https://placehold.it/400x290" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
-                        <p>Graphic Design</p>
+                        <h4>Bose Professional Website</h4>
+                        <p>CSS, HTML, JavaScript, XSL, XSL-FO</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -201,8 +257,8 @@
                         <img src="https://placehold.it/400x290" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-                        <p>Website Design</p>
+                        <h4>Bose Cadillac Website</h4>
+                        <p>CSS, HTML, JavaScript, Perl, XSL</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -215,8 +271,8 @@
                         <img src="https://placehold.it/400x290" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p>Website Design</p>
+                        <h4>Bose.com (legacy)</h4>
+                        <p>CSS, HTML, Java, JavaScript, Perl, XSL</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -270,26 +326,6 @@
             <div id="contact_form" class="row">
                 <div class="col-md-12">
                     <h2>Get In Touch <i class="fa fa-smile-o"></i></h2>
-                    <ul class="list-inline banner-social-buttons">
-                        <li>
-                            <a title="LinkedIn" href="https://www.linkedin.com/in/jsherer" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i></a>
-                        </li>
-                        <li>
-                            <a title="GitHub" href="https://github.com/thrash4life" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i></a>
-                        </li>
-                        <li>
-                            <a title="Twitter" href="https://twitter.com/thrash4life" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i></a>
-                        </li>
-                        <li>
-                            <a title="YouTube" href="https://goo.gl/ZfioeF" class="btn btn-default btn-lg"><i class="fa fa-youtube-play fa-fw"></i></a>
-                        </li>
-                        <li>
-                            <a title="SoundCloud" href="https://soundcloud.com/thrash4life/sets" class="btn btn-default btn-lg"><i class="fa fa-soundcloud fa-fw"></i></a>
-                        </li>
-                        <li>
-                            <a title="IMDB" href="http://imdb.com/name/nm3235781" class="btn btn-default btn-lg"><i class="fa fa-film fa-fw"></i></a>
-                        </li>
-                    </ul>
                     <form role="form" id="contactForm">
                         <div class="form-group">
                             <label class="control-label" for="name">Name *</label>
@@ -320,7 +356,7 @@
                             <span class="help-block" style="display: none;">Please check that you are not a robot.</span>
                         </div>
                         <span class="help-block" style="display: none;">Please enter a the security code.</span>
-                        <button type="submit" id="msgSendBtn" class="btn btn-primary btn-lg" data-loading-text="Sending..."><i class="fa fa-envelope-o"></i> Send</button>
+                        <button type="submit" id="msgSendBtn" class="btn btn-default btn-lg" data-loading-text="Sending..."><i class="fa fa-envelope-o"></i> Send</button>
                     </form>
                 </div>
             </div>
@@ -528,6 +564,7 @@
             restartOnPushState: false,
             restartOnRequestAfter: false
         };
+        Pace.on("start", function() { curtain.style.opacity = "1"});        
     </script>
     <!-- build:js scripts/plugins.js -->
     <!-- <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
