@@ -38,6 +38,43 @@ if(!(isMobile)) {
   };
 }
 
+
+// jQuery to collapse the navbar on scroll
+$(window).scroll(function() {
+    if ($('.navbar').offset().top > 50) {
+        $('.navbar-fixed-top').addClass('top-nav-collapse');
+    }
+    else {
+        $('.navbar-fixed-top').removeClass('top-nav-collapse');
+    }
+});
+
+    // Highlight the top nav as scrolling occurs
+    $('body').scrollspy({
+        target: '.navbar'
+    });
+
+// jQuery for page scrolling feature - requires jQuery Easing plugin
+$(function() {
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).position().top
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+});
+
+// Closes the Responsive Menu on Menu Item Click
+$('.navbar-collapse ul li a').click(function() {
+    $('.navbar-toggle:visible').click();
+});
+$('.navbar-brand.page-scroll').click(function() {
+    if ($('.navbar-collapse.navbar-right.navbar-main-collapse.collapse').attr('aria-expanded') === 'true') {
+        $('.navbar-toggle:visible').click();
+    }
+});
+
 // animate logo by navbar site name
 (function nameLogoFade() {
     $('.navbar-brand.page-scroll > i').delay(4000).fadeOut(1000, function() {
@@ -101,107 +138,63 @@ if(!(isMobile)) {
       $("#msgSendBtn").after('<div id="emailAlert" class="alert alert-' + (isError ? 'danger' : 'success') + '" style="margin-top: 5px;">' + $('<div/>').text(msg).html() + '</div>');
     }
   };
-})();
 
+  $(document).ready(function() {
+    Pace.on("start", function() { $('#curtain').fadeIn(500); });    
+    Pace.on("done", function() { $('#curtain').fadeOut(1000); });
 
-// jQuery to collapse the navbar on scroll
-$(window).scroll(function() {
-    if ($('.navbar').offset().top > 50) {
-        $('.navbar-fixed-top').addClass('top-nav-collapse');
-    }
-    else {
-        $('.navbar-fixed-top').removeClass('top-nav-collapse');
-    }
-});
+    $("#msgSendBtn").click(function(e) {
+      e.preventDefault();
+      var $btn = $(this);
+      $btn.val('loading');
+      contactFormUtils.clearErrors();
 
-    // Highlight the top nav as scrolling occurs
-    $('body').scrollspy({
-        target: '.navbar'
-    });
-
-// jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
-    $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).position().top
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
-    });
-});
-
-// Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() {
-    $('.navbar-toggle:visible').click();
-});
-$('.navbar-brand.page-scroll').click(function() {
-    if ($('.navbar-collapse.navbar-right.navbar-main-collapse.collapse').attr('aria-expanded') === 'true') {
-        $('.navbar-toggle:visible').click();
-    }
-});
-
-$(document).ready(function() {
-  // preloader display / hide
-  Pace.on("start", function() { $('#curtain').fadeIn(500); });    
-  Pace.on("done", function() { $('#curtain').fadeOut(1000); });
-
-
-  /* BEGIN: contact form processing */
-  
-  $("#msgSendBtn").click(function(e) {
-    e.preventDefault();
-    var $btn = $(this);
-    $btn.val('loading');
-    contactFormUtils.clearErrors();
-
-    //do a little client-side validation -- check that each field has a value and e-mail field is in proper format
-    var hasErrors = false;
-    $('#contactForm input,#contactForm textarea').not('.optional').each(function() {
-      var $this = $(this);
-      if (($this.is(':checkbox') && !$this.is(':checked')) || !$this.val()) {
+      //do a little client-side validation -- check that each field has a value and e-mail field is in proper format
+      var hasErrors = false;
+      $('#contactForm input,#contactForm textarea').not('.optional').each(function() {
+        var $this = $(this);
+        if (($this.is(':checkbox') && !$this.is(':checked')) || !$this.val()) {
+          hasErrors = true;
+          contactFormUtils.addError($(this));
+        }
+      });
+      var $email = $('#email');
+      if (!contactFormUtils.isValidEmail($email.val())) {
         hasErrors = true;
-        contactFormUtils.addError($(this));
+        contactFormUtils.addError($email);
+      }
+
+      //if there are any errors return without sending e-mail
+      if (hasErrors) {
+        $btn.val('reset');
+        return false;
+      }
+
+      //send the feedback e-mail
+      $.ajax({
+        type: "POST",
+        url: "lib/sendmail.php",
+        data: $("#contactForm").serialize(),
+        success: function(data) {
+          contactFormUtils.addAjaxMessage(data.message, false);
+          contactFormUtils.clearForm();
+        },
+        error: function(response) {
+          contactFormUtils.addAjaxMessage(response.responseJSON.message, true);
+        },
+        complete: function() {
+          $btn.button('reset');
+        }
+     });
+      return false;
+    });
+    $('#contactForm input, #contactForm textarea').change(function () {
+      var checkBox = $(this).siblings('span.input-group-addon').children('.glyphicon');
+      if ($(this).val()) {
+        checkBox.removeClass('glyphicon-unchecked').addClass('glyphicon-check').css({color: 'green'});
+      } else {
+        checkBox.removeClass('glyphicon-check').addClass('glyphicon-unchecked').css({color: ''});
       }
     });
-    var $email = $('#email');
-    if (!contactFormUtils.isValidEmail($email.val())) {
-      hasErrors = true;
-      contactFormUtils.addError($email);
-    }
-
-    //if there are any errors return without sending e-mail
-    if (hasErrors) {
-      $btn.val('reset');
-      return false;
-    }
-
-    //send the feedback e-mail
-    $.ajax({
-      type: "POST",
-      url: "lib/sendmail.php",
-      data: $("#contactForm").serialize(),
-      success: function(data) {
-        contactFormUtils.addAjaxMessage(data.message, false);
-        contactFormUtils.clearForm();
-      },
-      error: function(response) {
-        contactFormUtils.addAjaxMessage(response.responseJSON.message, true);
-      },
-      complete: function() {
-        $btn.button('reset');
-      }
-   });
-    return false;
   });
-  $('#contactForm input, #contactForm textarea').change(function () {
-    var checkBox = $(this).siblings('span.input-group-addon').children('.glyphicon');
-    if ($(this).val()) {
-      checkBox.removeClass('glyphicon-unchecked').addClass('glyphicon-check').css({color: 'green'});
-    } else {
-      checkBox.removeClass('glyphicon-check').addClass('glyphicon-unchecked').css({color: ''});
-    }
-  });
-  
-  /* END: contact form processing */  
-  
-});
+})();
