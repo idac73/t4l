@@ -1,0 +1,48 @@
+.browserupgrade {
+    margin: 0.2em 0;
+    background: $t4lwhite;
+    color: $t4lbrown;
+    padding: 0.2em 0;
+}
+.btn {
+    text-transform: uppercase;
+    font-family: 'Raleway',serif;
+    font-weight: 400;
+    @include bktransition(.3s);
+}
+.btn-default {
+    border: 1px solid $t4lwhite;
+    color: $t4lwhite;
+    background-color: $t4lbrown;
+    &:hover, &:focus:hover, .focus:hover, &:active:hover, .active:hover, .open > .btn-default.dropdown-toggle:hover {
+        color: $t4lwhite;
+        background-color: transparent;
+        border-color: $t4lbrown;
+    }
+    &:active, .open > .btn-default.dropdown-toggle {
+        background-image: none;
+    }
+    &:hover, &:focus {
+        border: 1px solid $t4lorange4;
+        outline: none;
+        color: $t4lwhite;
+        background: $t4lorange4;
+    }    
+    .badge {
+        color: transparent;
+        background-color: $t4lwhite;
+    }    
+}
+.btn-primary {
+    color: $t4lwhite;
+    background-color: $t4lorange;
+    border-color: $t4lorange;
+    &:hover, &:focus:hover, .focus:hover, &:active:hover, .active:hover, .open > .btn-primary.dropdown-toggle:hover {
+        background-color: $t4lorangehover;
+        border-color: $t4lorangehover;
+    }
+    .disabled, .disabled:hover, .disabled:focus, .disabled.focus, .disabled:active, .disabled.active, &[disabled], &[disabled]:hover, &[disabled]:focus, &[disabled].focus, &[disabled]:active, &[disabled].active {
+        background-color: transparent;
+        border-color: $t4lwhite;
+    }    
+}

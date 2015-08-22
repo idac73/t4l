@@ -1,0 +1,39 @@
+$icon-font-path: '../fonts/';
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin text-shadow-lg {
+    text-shadow: 0px 1px 0px #999,0px 2px 0px #888,0px 3px 0px #777,0px 4px 0px #666,0px 5px 0px #555,0px 6px 0px #444,0px 7px 0px #333,0px 8px 7px #001135;
+}
+@mixin box-shadow-sm {
+    box-shadow: 0px 1px 0px #999,0px 2px 0px #777,0px 3px 0px #555,0px 4px 0px #333,0px 5px 4px #001135;
+}
+@mixin text-shadow-sm {
+    text-shadow: 0px 1px 0px #999,0px 2px 0px #777,0px 3px 0px #555,0px 4px 0px #333,0px 5px 4px #001135;
+}
+@mixin bktransition($time) {
+    -webkit-transition: background $time ease-in-out,border $time ease-in-out,padding $time ease-in-out;
+    -moz-transition: background $time ease-in-out,border $time ease-in-out,padding $time ease-in-out;
+    transition: background $time ease-in-out,border $time ease-in-out,padding $time ease-in-out;
+}
+@mixin opacity($time) {
+    -webkit-transition: opacity $time ease-in-out;
+    -moz-transition: opacity $time ease-in-out;
+    transition: opacity $time ease-in-out;
+}
+$opacity: (0.2,0.6,0.75,0.9);
+$t4lbrown: #3a3736;
+$t4lwhite: #f1f1f1;
+$t4lwhite1: rgba(241,241,241,nth($opacity,1));
+$t4lwhite3: rgba(255,255,255,nth($opacity,3));
+$t4lorange: #f36d41;
+$t4lorangehover: #cc6419;
+$t4lorange2: rgba(243,109,65,nth($opacity,2));
+$t4lorange4: rgba(243,109,65,nth($opacity,4));
+$t4lblack2: rgba(0,0,0,nth($opacity,2));

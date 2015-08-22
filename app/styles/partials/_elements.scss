@@ -1,0 +1,79 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Raleway',sans-serif;
+    color: $t4lwhite;
+    background-color: $t4lbrown;
+    -webkit-tap-highlight-color: $t4lwhite1;
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    margin: 0 0 35px;
+    text-transform: uppercase;
+    font-family: 'Raleway',serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+p {
+    margin: 0 0 25px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+q {
+    quotes: "“" "”" "‘" "’";
+    margin: 0 0 30px;
+    font-size: 20px;
+    line-height: 1.5;    
+    &:before {
+        content: open-quote;
+    }
+    &:after {
+        content: close-quote;
+    }
+}
+header, section {
+    padding: 100px 0;
+}
+hr {
+    border-top: 1px solid $t4lorange4;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+a {
+    color: $t4lorange;
+    @include bktransition(.2s);
+    &:hover, &:focus {
+        text-decoration: none;
+        color: $t4lorangehover;
+    }    
+}
+img {
+    &::selection, &::-moz-selection {
+        background: transparent;
+    }    
+}
+fieldset {
+    &[disabled] {
+        .btn-default {
+            &:hover, &:focus, .focus, &:active, .active {
+                background-color: transparent;
+                border-color: $t4lwhite;
+            }
+        }
+    }    
+}
+footer {
+    color: $t4lwhite;
+    background-color: $t4lbrown;
+    padding: 50px 0;
+    p {
+        margin: 0 0 40px 0;
+    }    
+}
+::-moz-selection, ::selection {
+    text-shadow: none;
+    background: $t4lwhite1;
+}
