@@ -22,6 +22,11 @@
         &:focus {
             outline: none;
         }
+        &.page-scroll {
+            i.fa-headphones {
+                margin-right: 2.5px;
+            }        
+        }        
         .navbar-toggle {
             padding: 4px 6px;
             font-size: 16px;
@@ -29,11 +34,6 @@
             &:focus, &:active {
                 outline: none;
             }            
-        }
-        .page-scroll {
-            i.fa-headphones {
-                margin-right: 2.5px;
-            }        
         }
     }
     .nav {

@@ -14,6 +14,11 @@
         h3 {
             margin-top: 30px;
         }
+        * {
+            &:focus, &:active {
+                outline: none;
+            }
+        }
         .portfolio-link {
             display: block;
             position: relative;
@@ -21,11 +26,6 @@
             margin: 0 auto;
             @include border-radius(10px 10px 0 0);
             overflow: hidden;
-            img {
-                &:focus {
-                    outline: none;
-                }
-            }            
             .portfolio-hover {
                 position: absolute;
                 width: 100%;

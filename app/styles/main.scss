@@ -1,10 +1,2 @@
-@import "partials/variables";
-/* @import "partials/images"; */
-@import "partials/elements";
-@import "partials/overrides";
-@import "partials/navigation";
-@import "partials/home";
-@import "partials/testimonials";
-@import "partials/portfolio";
-@import "partials/contact";
-@import "partials/responsive";
+@import "modules/all";
+@import "partials/all";
