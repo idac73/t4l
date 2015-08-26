@@ -1,3 +1,10 @@
+@media (max-width:426px) {
+    #home {
+        .banner-heading {
+            font-size: 2.5em;
+        }
+    }
+}
 @media (min-width:767px) {
     p {
         margin: 0 0 35px;
@@ -27,14 +34,21 @@
     }
     #home {
         .banner-heading {
-            font-size: 100px;
+            font-size: 5.2em;
             span {
-                font-size: 30px;
+                font-size: .3em;
             }
         }
         .banner-text {
-            font-size: 30px;
-        }   
+            font-size: 2em;
+        } 
+        .stickfist {
+            &.stickfist-banner {
+                font-size: 1.2em;
+                top: .15em;
+                position: relative;        
+            }
+        }        
         &:before {
             background-position: 68% 0;
         }        
@@ -85,7 +99,7 @@
         height: 620px;
         &:before {
             background-position: 64% 0;
-        }        
+        }
     }
     #portfolio {
         .banner-social-buttons {
@@ -102,10 +116,24 @@
         }
     }
 }
+@media (min-width:1200px) {
+    #home {
+        .banner-heading {
+            font-size: 7.2em;
+        }
+    }
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio:2) and (orientation:landscape) {
     #home {
         &:before {
             background-position: 72% 0;
-        }   
+        }
+        .banner-heading {
+            font-size: 4em;
+        }
+        .banner-text {
+            font-size: 2em;
+        }
     }
 }

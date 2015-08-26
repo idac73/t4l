@@ -37,3 +37,30 @@ $t4lorangehover: #cc6419;
 $t4lorange2: rgba(243,109,65,nth($opacity,2));
 $t4lorange4: rgba(243,109,65,nth($opacity,4));
 $t4lblack2: rgba(0,0,0,nth($opacity,2));
+
+@font-face {
+	font-family: 'thrash4life';
+	src:url('../fonts/thrash4life.eot?2zmudu');
+	src:url('../fonts/thrash4life.eot?#iefix2zmudu') format('embedded-opentype'),
+		url('../fonts/thrash4life.ttf?2zmudu') format('truetype'),
+		url('../fonts/thrash4life.woff?2zmudu') format('woff'),
+		url('../fonts/thrash4life.woff2?2zmudu') format('woff2'),
+		url('../fonts/thrash4life.svg?2zmudu#thrash4life') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.stickfist {
+    &:before {
+    	content: "\e600";
+    	font-family: 'thrash4life';
+    	speak: none;
+    	font-style: normal;
+    	font-weight: normal;
+    	font-variant: normal;
+    	text-transform: none;
+    	line-height: 1;
+    	-webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;	
+    }
+}
