@@ -27,12 +27,21 @@
 }(document));
 
 $(function() {
-
   // Preloader display / hide
   Pace.on('start', function() { $('#curtain').fadeIn(500); });  
-  Pace.on('hide', function() { $('#curtain').fadeOut(1000); });
+  Pace.on('hide', function() { 
+    $('#curtain').fadeOut(1000);
+    $('.banner-heading').delay(1500).queue(function(){
+        $(this).addClass('logo-fire').dequeue();
+        $(this).delay(3000).queue(function() {
+          $(this).removeClass('logo-fire').dequeue();
+        });
+    });
+  });
   Pace.stop;
   
+$('.banner-heading').click('#contact')
+
   /*! 
    * http://stackoverflow.com/questions/3514784/what-is-the-best-way-to-detect-a-mobile-device-in-jquery
    * davidcondrey

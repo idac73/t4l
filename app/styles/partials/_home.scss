@@ -5,7 +5,14 @@
     .banner-heading {
         font-size: 2.75em;
         margin-bottom: .25em;
-        @include text-shadow-sm;    
+        @include tstransition(1s);
+        @include text-shadow-sm;  
+        a {
+            color: inherit;
+            &:hover, &:focus, &.active {
+                color: inherit;
+            }
+        }
         span {
             font-size: .5em;
             font-weight: 400;
@@ -13,11 +20,30 @@
             margin-bottom: .5em;            
             @include text-shadow-sm;        
         }
+        &.logo-fire {
+            @include tstransition(1s);
+            @include text-shadow-fire-sm;
+        }
+        &:hover {
+            @include tstransition(1s);
+            @include text-shadow-fire-sm; 
+        }
     }
     .banner-text {
         font-size: 1.4em;
+        @include tstransition(1s);
         @include text-shadow-sm;    
-    }   
+    }
+    /*.stickfist {
+        &.stickfist-banner {
+            @include tstransition(1s);
+            @include text-shadow-sm;
+            &.logo-fire {
+                @include tstransition(1s);
+                @include text-shadow-fire-sm;
+            }            
+        }
+    } */
     &:before { 
         content: ' ';
         display: block;
@@ -45,20 +71,19 @@
         border: 2px solid $t4lwhite;
         @include border-radius(35px);
         font-size: 40px;
-        color: $t4lwhite;
-        background: transparent;
+        color: $t4lbrown;
+        background: $t4lwhite;
         @include bktransition(.5s);
-        /*
-            @include text-shadow-sm;
-            @include box-shadow-sm;
-        */
+        &:hover {
+            background: $t4lorange2;
+            color: $t4lwhite;
+            border-color: $t4lorange4;
+        }
+        &:focus {
+            outline: none;
+            color: $t4lbrown;
+            background: $t4lwhite; 
+            border-color: $t4lwhite;
+        }    
     }
-    .btn-circle:hover {
-        background: $t4lorange2;
-        color: $t4lwhite;
-    }
-    .btn-circle:focus {
-        outline: none;
-        color: $t4lwhite;
-    }    
 }

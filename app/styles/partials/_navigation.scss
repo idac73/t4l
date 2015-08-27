@@ -1,13 +1,3 @@
-.nav {
-    li {
-        a {
-            &:hover, &:focus {
-                background-color: transparent;
-            }
-        }
-    }
-}
-
 .navbar-custom {
     margin-bottom: 0;
     border-bottom: 1px solid $t4lorange4;
@@ -18,10 +8,6 @@
         color: $t4lwhite;
     }    
     .navbar-brand {
-        font-weight: 700;
-        &:focus {
-            outline: none;
-        }
         &.page-scroll {
             i.fa-headphones {
                 margin-right: 2.5px;
@@ -31,28 +17,28 @@
             padding: 4px 6px;
             font-size: 16px;
             color: $t4lwhite;
-            &:focus, &:active {
+            &:focus, &.active {
                 outline: none;
             }            
         }
     }
-    .nav {
-        li {
-            border: 1px solid transparent;
+    li, .navbar-brand {
+        border: 1px solid transparent;
+        @include border-radius(8px);
+        @include bktransition(.3s);
+        &:hover {
+            background-color: $t4lorange2;
+            border: 1px solid $t4lorange4;
             @include border-radius(8px);
             @include bktransition(.3s);
-            &:hover, &:focus, &.active {
-                background-color: $t4lorange2;
-                border: 1px solid $t4lorange4;
-                @include border-radius(8px);
-                @include bktransition(.3s);
+        }
+        a {
+            &:hover, &:focus {
+                background-color: transparent;
             }
-        }        
-    }    
-}
-
-.top-nav-collapse {
-    .nav {
+        }            
+    }
+    &.top-nav-collapse {
         li {
             outline: none;
             border: 1px solid transparent;
@@ -66,13 +52,30 @@
                 @include bktransition(.5s);
             }
         }
-        .light-tab {
+        .navbar-brand {
+            padding-bottom: 35px;
+            outline: none;
+            border: 1px solid transparent;
+            @include border-radius(10px 10px 0 0);
+            @include bktransition(.5s);            
+            &:hover {
+                padding-bottom: 35px;
+                outline: none;
+                color: $t4lbrown;
+                border: 1px solid transparent;
+                background-color: $t4lwhite;
+                @include border-radius(10px 10px 0 0);
+                @include bktransition(.5s);                
+            }
+        }
+        .light-tab{
             outline: none;
             border: 1px solid transparent;
             @include border-radius(10px 10px 0 0);
             @include bktransition(.5s);                
             &:hover, &:focus, &.active {
                 outline: none;
+                color: $t4lbrown;
                 border: 1px solid transparent;
                 background-color: $t4lwhite;
                 @include border-radius(10px 10px 0 0);
@@ -81,11 +84,11 @@
                     color: $t4lbrown;
                     @include bktransition(.7s);
                 }
-            }                
-        }        
+            }
+        }
+        .navbar-nav {
+            margin-top: 0;
+            margin-bottom: 0;
+        }    
     }
-    .navbar-nav {
-        margin-top: 0;
-        margin-bottom: 0;
-    }    
 }

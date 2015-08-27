@@ -69,6 +69,38 @@
             color: $t4lwhite;
             @include bktransition(.7s);
         }
+        .navbar-brand {
+            padding-top: 19px;
+            padding-bottom: 35px;
+            @include border-radius(0);
+            border-bottom-color: transparent;
+            width: 100%;
+            @include border-radius(0);
+            text-align: center;
+            position: absolute;
+            @include bktransition(.5s);            
+            &:hover {
+                padding-bottom: 35px;
+                outline: none;
+                color: $t4lwhite;
+                border: 1px solid transparent;
+                background-color: $t4lorange2;
+                @include bktransition(.5s);
+                @include border-radius(0);
+            }
+            &:focus,&.active {
+                background-color: transparent;
+                border-color: transparent;
+                color: $t4lwhite;
+            }
+        }
+        &.top-nav-collapse {
+            .navbar-brand {
+                &:hover {
+                    @include border-radius(0);
+                }
+            }
+        }
         .navbar-collapse {
             box-shadow: inset 0 1px 0 $t4lorange4;
             .nav {

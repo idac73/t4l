@@ -34,12 +34,19 @@
     }    
 }
 .btn-primary {
-    color: $t4lwhite;
-    background-color: $t4lorange;
-    border-color: $t4lorange;
-    &:hover, &:focus:hover, .focus:hover, &:active:hover, .active:hover, .open > .btn-primary.dropdown-toggle:hover {
-        background-color: $t4lorangehover;
-        border-color: $t4lorangehover;
+    color: $t4lbrown;
+    background-color: $t4lwhite;
+    border-color: $t4lbrown;
+    @include bktransition(.5s);
+    &:hover, &:active:hover, .active:hover, .open > .btn-primary.dropdown-toggle:hover {
+        background-color: $t4lorange;
+        border-color: $t4lorange4;
+    }
+    &:focus, .focus {
+        color: $t4lbrown;
+        background: $t4lwhite;
+        border-color: $t4lbrown;        
+        outline: 0;
     }
     .disabled, .disabled:hover, .disabled:focus, .disabled.focus, .disabled:active, .disabled.active, &[disabled], &[disabled]:hover, &[disabled]:focus, &[disabled].focus, &[disabled]:active, &[disabled].active {
         background-color: transparent;

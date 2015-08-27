@@ -17,6 +17,17 @@ $icon-font-path: '../fonts/';
 @mixin text-shadow-sm {
     text-shadow: 0px 1px 0px #999,0px 2px 0px #777,0px 3px 0px #555,0px 4px 0px #333,0px 5px 4px #001135;
 }
+@mixin text-shadow-fire-lg {
+    text-shadow: 0px -1px 4px rgb(255, 255, 255), 0px -2px 10px rgb(255, 255, 0), 0px -10px 20px rgb(255, 128, 0), 0px -18px 40px rgb(255, 0, 0), 0px 1px 0px #999,0px 2px 0px #888,0px 3px 0px #777,0px 4px 0px #666,0px 5px 0px #555,0px 6px 0px #444,0px 7px 0px #333,0px 8px 7px #001135; 
+}
+@mixin text-shadow-fire-sm {
+    text-shadow: 0px -1px 4px rgb(255, 255, 255), 0px -2px 10px rgb(255, 255, 0), 0px -10px 20px rgb(255, 128, 0), 0px -18px 40px rgb(255, 0, 0), 0px 1px 0px #999,0px 2px 0px #777,0px 3px 0px #555,0px 4px 0px #333,0px 5px 4px #001135;   
+}
+@mixin tstransition($time) {
+    -webkit-transition: text-shadow $time ease-in-out;
+    -moz-transition: text-shadow $time ease-in-out;
+    transition: text-shadow $time ease-in-out; 
+}
 @mixin bktransition($time) {
     -webkit-transition: background $time ease-in-out,border $time ease-in-out,padding $time ease-in-out;
     -moz-transition: background $time ease-in-out,border $time ease-in-out,padding $time ease-in-out;
