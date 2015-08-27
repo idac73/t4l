@@ -40,7 +40,7 @@ $(function() {
   });
   Pace.stop;
   
-$('.banner-heading').click('#contact')
+$('.banner-heading').click('#contact');
 
   /*! 
    * http://stackoverflow.com/questions/3514784/what-is-the-best-way-to-detect-a-mobile-device-in-jquery
