@@ -53,8 +53,8 @@
             background-position: 68% 0;
         }        
     }
-    #portfolio {
-        .portfolio-item {
+    #projects {
+        .projects-item {
             margin: 0 0 30px;
         }
     }
@@ -133,7 +133,7 @@
             background-position: 64% 0;
         }
     }
-    #portfolio {
+    #projects {
         .banner-social-buttons {
             li {
                 margin-bottom: 20px;
@@ -142,7 +142,7 @@
     }
 }
 @media (max-width:1199px) {
-    #portfolio {
+    #projects {
         .banner-social-buttons {
             margin-top: 15px;
         }

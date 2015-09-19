@@ -38,6 +38,12 @@
       "quotes": [
         2,
         "single"
+      ],
+      "no-unused-vars": [
+        0
+      ],
+      "no-undef": [
+        0
       ]
     }
   },
