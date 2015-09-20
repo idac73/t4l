@@ -1,2 +1,1 @@
-# Hi!
-Just a lil safe keeping for a project on a VM.
+# Hi! Welcome to my 2015 portfolio landing page repo

@@ -154,7 +154,7 @@ $(function() {
   /* BEGIN: contact form processing
     https://github.com/jonmbake/bootstrap3-contact-form
   */
-  
+
   // Contact form object
   var contactFormUtils = {
     isValidEmail: function(email) {
@@ -221,7 +221,6 @@ $(function() {
         contactFormUtils.clearForm();
       },
       error: function(response) {
-        console.log(response);
         if (response.status === 200) {
           contactFormUtils.addAjaxMessage('Thank you for your message! Expect a reply soon!', false);
           $btn.html('<i class="fa fa-envelope-o"></i> Send');
