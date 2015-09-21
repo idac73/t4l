@@ -12,8 +12,9 @@
     img {
         @include border-radius(0px 0px 10px 10px);        
     }
-    .of-lame-excuses {
-        margin-top: 2em;
+    h3 {
+        padding: .5em;
+        line-height: 1.25em;
     }
     .banner-social-buttons {
         margin-top: 0;
