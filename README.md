@@ -1,1 +1,0 @@
-# Hi! Welcome to my 2015 portfolio landing page repo

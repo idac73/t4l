@@ -1,10 +1,5 @@
 node_modules
 dist
 .tmp
-.sass-cache
 bower_components
 test/bower_components
-app/images
-app/lib
-dist
-dist.zip

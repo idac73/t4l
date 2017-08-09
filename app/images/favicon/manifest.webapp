@@ -1,0 +1,14 @@
+{
+	"version": "1.0",
+	"name": "Joshua Sherer - FullStack Web Developer and ThrashPunk Drummer at Your Service",
+	"description": "Joshua Sherer - FullStack Web Development and ThrashPunk Drumming at Your Service",
+	"icons": {
+		"60": "images\/favicon\/firefox_app_60x60.png",
+		"128": "images\/favicon\/firefox_app_128x128.png",
+		"512": "images\/favicon\/firefox_app_512x512.png"
+	},
+	"developer": {
+		"name": "Joshua Sherer",
+		"url": "http:\/joshua.sherer.biz\/"
+	}
+}
